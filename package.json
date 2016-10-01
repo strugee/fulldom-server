@@ -1,0 +1,27 @@
+{
+  "name": "fulldom-server",
+  "version": "1.0.0",
+  "description": "Proxy-like server that will show you the DOM of a page after JS runs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strugee/fulldom-server.git"
+  },
+  "keywords": [
+    "dom",
+    "server"
+  ],
+  "author": "Alex Jordan <alex@strugee.net>",
+  "license": "AGPL-3.0+",
+  "bugs": {
+    "url": "https://github.com/strugee/fulldom-server/issues"
+  },
+  "homepage": "https://github.com/strugee/fulldom-server#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "jsdom": "^9.5.0"
+  }
+}
