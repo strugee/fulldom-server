@@ -2,7 +2,7 @@
 
 Proxy-like server that will show you the DOM of a page after JS runs
 
-Especially useful when combined with [Huginn][1]'s `WebsiteAgent`. See cantino/huginn#888
+Especially useful when combined with [Huginn][1]'s `WebsiteAgent`. See [cantino/huginn#888][2]
 
 ## Installing
 
@@ -39,7 +39,7 @@ See `fulldom-server --help` for details.
 
 ## Warning
 
-fulldom relies on [PhantomJS][2] and thus has to spawn a new process for each and every incoming request.
+fulldom relies on [PhantomJS][3] and thus has to spawn a new process for each and every incoming request.
 
 Please keep this in mind if you plan to publicly deploy fulldom or use it in production.
 
@@ -60,4 +60,5 @@ Alex Jordan <alex@strugee.net>
 AGPL 3.0+
 
  [1]: https://github.com/cantino/huginn
- [2]: http://phantomjs.org/
+ [2]: https://github.com/cantino/huginn/issues/888
+ [3]: http://phantomjs.org/
