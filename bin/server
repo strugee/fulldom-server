@@ -23,13 +23,26 @@ License along with fulldom-server. If not, see
 */
 
 var app = require('../lib/app.js');
-var settings = require('../lib/settings.js');
 
-console.log('Copyright (C) 2015 Alex Jordan <alex@strugee.net>.');
-console.log('License AGPLv3+: GNU Affero GPL version 3 or later <http://gnu.org/licenses/agpl-3.0.html>.');
-console.log('This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law.');
+var agpl_notice = ['Copyright (C) 2016 Alex Jordan <alex@strugee.net>.',
+                   'License AGPLv3+: GNU Affero GPL version 3 or later <http://gnu.org/licenses/agpl-3.0.html>.',
+                   'This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law.'].join('\n');
 
-var server = app.listen(settings.port, settings.address, function() {
+var argv = require('yargs')
+	    .usage('Usage: $0 [options]')
+	    .alias({'help': 'h', 'config': 'c', 'port': 'p', 'address': 'a'})
+	    .describe({port: 'Port that the HTTP server will bind to', address: 'Address that the HTTP server will bind to'})
+	    .default({ config: '/etc/fulldom.json', address: '0.0.0.0', port: 8000 })
+	    .config()
+	    .env('FULLDOM')
+	    .help()
+	    .version()
+	    .epilog(agpl_notice)
+	    .argv;
+
+console.log(agpl_notice);
+
+var server = app.listen(argv.port, argv.address, function() {
 	var host = server.address().address;
 	var port = server.address().port;
 	console.log('Server listening at http://%s:%s/', host, port);
