@@ -1,0 +1,141 @@
+.\" Copyright 2016 Alex Jordan <alex@strugee.net>.
+.\"
+.\" This file is part of fulldom-server.
+.\"
+.\" fulldom-server is free software: you can redistribute it and/or modify
+.\" it under the terms of the GNU Affero General Public License as
+.\" published by the Free Software Foundation, either version 3 of the
+.\" License, or (at your option) any later version.
+.\"
+.\" fulldom-server is distributed in the hope that it will be useful, but
+.\" WITHOUT ANY WARRANTY; without even the implied warranty of
+.\" MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+.\" Affero General Public License for more details.
+.\"
+.\" You should have received a copy of the GNU Affero General Public
+.\" License along with fulldom-server. If not, see
+.\" <https://www.gnu.org/licenses/>.
+.\"
+.TH FULLDOM-SERVER 1 "02 October 2016" "1.0.0"
+.SH NAME
+fulldom-server \- proxy\-like server that will show you the DOM of a page after JS runs
+.SH SYNOPSIS
+
+.B fulldom-server
+--help
+
+.B fulldom-server
+--version
+
+.B fulldom-server
+[ --config
+.IR config_path
+| -c
+.IR config_path
+] [ --port
+.IR port
+| -p
+.IR port
+] [ --address
+.IR address
+| -a
+.IR address
+]
+.SH DESCRIPTION
+fulldom exposes a single endpoint at
+.B /<url>
+which, when sent an HTTP GET request, will give you back the serialized DOM of the page at
+.B <url>
+when the page's JS has "finished running". As it is essentially impossible to determine when that happens you need to specify a CSS selector, the presence of which will be used as a heuristic for when the page is "loaded". For example, if you are trying to scrape an image gallery, but the gallery is filled in via JS, you might use
+.B img
+as your selector. In this case fulldom will load the gallery and wait until there is at least one match for the
+.B img
+selector, then serialize the gallery's DOM and return it to you in an HTTP response. Note that both
+.B <url>
+and
+.B <selector>
+should be percent-encoded - you need to be particularly careful to encode
+.B /
+characters.
+
+.IB Warning:
+fulldom relies on PhantomJS and thus has to spawn a (resource-intensive) new process for each and every incoming request.
+.SH OPTIONS
+.TP
+.BR --port ", " -p
+Port that the HTTP server will bind to. Default is
+.B 8000
+\.
+.TP
+.BR --address ", " -a
+Address that the HTTP server will bind to. Default is
+.B "0.0.0.0"
+\.
+.TP
+.BR --config ", " -c
+Path to JSON config file. Default is
+.B /etc/fulldom.json
+.TP
+.BR --help ", " -h
+Show help.
+.TP
+.BR --version
+Show version number.
+.SH EXAMPLES
+Simple usage:
+
+.nf
+.RS
+fulldom-server
+.RE
+.fi
+
+fulldom server running on port 1337, bound to
+.B localhost
+:
+
+.nf
+.RS
+fulldom-server -p 1337 -a localhost
+.RE
+.fi
+
+Same thing with environment variables:
+
+.nf
+.RS
+FULLDOM_PORT=1337 FULLDOM_ADDRESS=localhost fulldom-server
+.RE
+.fi
+
+With a JSON configuration file at
+.B /etc/custom/fulldom.json
+:
+
+.nf
+.RS
+fulldom-server --config /etc/custom/fulldom.json
+.RE
+.fi
+.SH ENVIRONMENT
+.TP
+.BR FULLDOM_PORT
+Port that the HTTP server will bind to.
+.TP
+.BR FULLDOM_ADDRESS
+Address that the HTTP server will bind to.
+.SH FILES
+.B /etc/fulldom.json
+- default configuration file
+.\".SH SEE ALSO
+.\"
+.\".B fulldom.json(5)
+.SH BUGS
+fulldom does not handle PhantomJS errors particularly well.
+.SH AUTHOR
+Written by Alex Jordan.
+.SH COPYRIGHT
+Copyright \(co 2016 Alex Jordan <alex@strugee.net>.
+License AGPLv3+: GNU Affero GPL version 3 or later <http://gnu.org/licenses/agpl-3.0.html>.
+
+This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law.
