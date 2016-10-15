@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "Proxy-like server that will show you the DOM of a page after JS runs",
   "main": "index.js",
-  "bin": { "fulldom-server": "./bin/server" },
-  "man": [ "./doc/fulldom-server.1" ],
+  "bin": {
+    "fulldom-server": "./bin/server"
+  },
+  "man": [
+    "./doc/fulldom-server.1"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
