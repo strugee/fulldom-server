@@ -2,6 +2,12 @@
 
 fulldom-server follows [Semantic Versioning][semver].
 
+## 1.1.0 - 2016-10-16
+
+### Added
+
+* Allow specifying the URL with the query string as well as the path
+
 ## 1.0.0 - 2016-10-02
 
 * Initial release
