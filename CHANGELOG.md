@@ -2,6 +2,12 @@
 
 fulldom-server follows [Semantic Versioning][semver].
 
+## 1.1.1 - 2016-10-16
+
+### Fixed
+
+* Remove an accidentally-committed console.log
+
 ## 1.1.0 - 2016-10-16
 
 ### Added
