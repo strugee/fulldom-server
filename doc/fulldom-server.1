@@ -124,6 +124,11 @@ Port that the HTTP server will bind to.
 .TP
 .BR FULLDOM_ADDRESS
 Address that the HTTP server will bind to.
+.BR NODE_ENVIRONMENT
+The environment fulldom-server is running in. This should be set to
+.B production
+in production environments or performance will be significantly
+degraded.
 .SH FILES
 .B /etc/fulldom.json
 - default configuration file
