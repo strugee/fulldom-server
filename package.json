@@ -20,7 +20,7 @@
     "dom",
     "server"
   ],
-  "author": "Alex Jordan <alex@strugee.net>",
+  "author": "AJ Jordan <alex@strugee.net>",
   "license": "AGPL-3.0+",
   "bugs": {
     "url": "https://github.com/strugee/fulldom-server/issues"

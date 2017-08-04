@@ -53,7 +53,7 @@ Note that both `<url>` and `<selector>` should be percent-encoded - you need to 
 
 ## Author
 
-Alex Jordan <alex@strugee.net>
+AJ Jordan <alex@strugee.net>
 
 ## License
 
