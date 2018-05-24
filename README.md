@@ -6,7 +6,7 @@ Especially useful when combined with [Huginn][1]'s `WebsiteAgent`. See [cantino/
 
 ## Installing
 
-    $ [sudo] npm install -g fulldom-server
+    $ [sudo] npm install -g fulldom
 
 ## Running
 
