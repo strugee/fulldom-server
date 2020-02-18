@@ -2,6 +2,12 @@
 
 fulldom-server follows [Semantic Versioning][semver].
 
+## 1.2.0 - future
+
+### Added
+
+* The package is now [shrinkwrapped](https://docs.npmjs.com/cli/shrinkwrap)
+
 ## 1.1.1 - 2016-10-16
 
 ### Fixed
