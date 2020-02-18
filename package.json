@@ -10,6 +10,7 @@
     "./doc/fulldom-server.1"
   ],
   "scripts": {
+    "start": "./bin/server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
