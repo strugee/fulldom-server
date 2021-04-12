@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "start": "./bin/server",
-    "test": "vows test/*-test.js"
+    "test": "nyc -r text -r lcov vows test/*-test.js"
   },
   "repository": {
     "type": "git",
@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "concat-stream": "^2.0.0",
+    "nyc": "^15.1.0",
     "vows": "^1.0.0-alpha.1"
   }
 }
