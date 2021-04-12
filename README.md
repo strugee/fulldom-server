@@ -1,5 +1,8 @@
 # fulldom-server
 
+[![Build Status](https://travis-ci.org/strugee/fulldom-server.svg?branch=master)](https://travis-ci.org/strugee/fulldom-server)
+[![Coverage Status](https://coveralls.io/repos/github/strugee/fulldom-server/badge.svg?branch=master)](https://coveralls.io/github/strugee/fulldom-server?branch=master)
+
 Proxy-like server that will show you the DOM of a page after JS runs
 
 Especially useful when combined with [Huginn][1]'s `WebsiteAgent`. See [cantino/huginn#888][2]
