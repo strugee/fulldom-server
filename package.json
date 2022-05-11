@@ -31,7 +31,7 @@
     "compression": "^1.6.2",
     "express": "^4.14.0",
     "phantomjs-prebuilt": "^2.1.12",
-    "yargs": "^6.0.0"
+    "yargs": "^7.0.0"
   },
   "devDependencies": {
     "concat-stream": "^2.0.0",
